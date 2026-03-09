@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script>
     // tailwind.config = {
@@ -31,10 +31,11 @@
     // }
   </script>
   <style type="text/tailwindcss">
-    
+
     @import "tailwindcss";
 
     @theme {
+      --font-display: 'Kantumruy Pro', sans-serif;
       --color-primary: #2E3191;
       --color-primary-light: #3d42b8;
       --color-primary-dark: #232678;
@@ -78,7 +79,6 @@
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       transition: background 0.3s, color 0.3s;
@@ -314,12 +314,12 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       transition: transform 0.25s, box-shadow 0.25s;
     }
-    .news-card:hover { 
+    .news-card:hover {
       transform: translateY(-5px);
       transition: all 0.15s;
       box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     }
-    .news-card:hover div img{ 
+    .news-card:hover div img{
       transform: scale(1.1);
       transition: transform 0.6s ease;
     }
@@ -379,6 +379,14 @@
     .hero-swiper { width:100%; height:100vh; min-height:600px; }
     .hero-swiper .swiper-slide {
       position: relative; overflow: hidden; display: flex; align-items: center;
+    }
+    .hero-swiper .hero-slide-title .title-khmer {
+      display: block;
+      font-family: 'Kantumruy Pro', sans-serif;
+      color: #ffffff;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
     }
     .hero-slide-bg {
       position: absolute; inset: 0; background-size: cover; background-position: center;
@@ -448,7 +456,7 @@
     .testi-swiper { padding: 1rem 0.5rem 4rem !important; overflow: hidden !important;}
     .testi-swiper .swiper-wrapper { align-items: stretch; }
     .testi-swiper .swiper-slide {
-      height: auto; 
+      height: auto;
       /* transform: scale(0.92); opacity: 0.4;
       transition: opacity 0.4s ease, transform 0.4s ease; */
     }
@@ -551,23 +559,16 @@
   </style>
 </head>
 
-<body>
+<body class="font-display">
 <!-- ═══════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════ -->
-<nav class="navbar" id="mainNav">
-  <div class="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center gap-3" style="height:68px">
+<nav class="navbar py-3" id="mainNav">
+  <div class="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center gap-3">
 
     <!-- LOGO -->
     <a href="/" class="flex items-center gap-2.5 flex-shrink-0 mr-2">
-      <div class="w-9 h-9 rounded flex items-center justify-center flex-shrink-0"
-           style="background:linear-gradient(135deg,#f0dc96,#d4bc60)">
-        <span style="color:#2E3191;font-family:'DM Serif Display',serif;font-size:1rem;font-weight:700;line-height:1">UP</span>
-      </div>
-      <div class="hidden sm:block leading-tight">
-        <div style="color:rgba(255,255,255,0.7);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;">University of</div>
-        <div style="color:#f0dc96;font-family:'DM Serif Display',serif;font-size:1rem;line-height:1.1">Puthisastra</div>
-      </div>
+      <img src="https://www.puthisastra.edu.kh/wp-content/uploads/2025/10/up-logo-25.png" alt="" width="240" height="auto">
     </a>
 
     <!-- DESKTOP LINKS -->
@@ -936,7 +937,7 @@
                 </span>
               </div>
               <h1 class="hero-slide-title" style="font-family:'DM Serif Display',serif;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.06;color:#fff;margin-bottom:1.25rem">
-                Shape the<br/>Future of<br/><em style="font-style:italic;color:#f0dc96">Health Sciences</em>
+                <span class="title-khmer">ស្រាវជ្រាវនិងនវានុវត្តន៍</span><br/>Future of<br/><em style="font-style:italic;color:#f0dc96">Health Sciences</em>
               </h1>
               <p class="hero-slide-desc" style="color:rgba(255,255,255,0.65);font-size:1.05rem;line-height:1.8;max-width:500px;margin-bottom:2rem">
                 Cambodia's premier university for health sciences — advancing medicine, pharmacy, dentistry, and technology through world-class education and research.
