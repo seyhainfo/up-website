@@ -1,0 +1,24 @@
+/* ═══════════════════════════════════════════
+ MAIN ENTRY POINT
+ Import order matters — variables first,
+ then utilities, then components.
+════════════════════════════════════════════ */
+@import "./base/reset.css";
+
+/* 1. Plain CSS design tokens (overrides / standalone fallback) */
+@import "./variables.css";
+
+/* 2. Reusable utilities */
+@import "./utilities.css";
+
+/* 3. Section components */
+@import "./components/navbar.css";
+@import "./components/hero.css";
+@import "./components/news-event.css";
+@import "./components/academic-excellence.css";
+@import "./components/discover-program.css";
+@import "./components/scho-cam.css";
+@import "./components/partners.css";
+@import "./components/testimonial.css";
+@import "./components/cta.css";
+@import "./components/footer";

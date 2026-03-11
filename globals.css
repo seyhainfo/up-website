@@ -1,0 +1,201 @@
+@charset "UTF-8";
+/* ═══════════════════════════════════════════
+ MAIN ENTRY POINT
+ Import order matters — variables first,
+ then utilities, then components.
+════════════════════════════════════════════ */
+@import "./base/reset.css";
+/* 1. Plain CSS design tokens (overrides / standalone fallback) */
+@import "./variables.css";
+/* 2. Reusable utilities */
+@import "./utilities.css";
+/* 3. Section components */
+@import "./components/navbar.css";
+@import "./components/hero.css";
+@import "./components/news-event.css";
+@import "./components/academic-excellence.css";
+@import "./components/discover-program.css";
+@import "./components/scho-cam.css";
+@import "./components/partners.css";
+@import "./components/testimonial.css";
+@import "./components/cta.css";
+/* ═══════════════════════════════════════════
+   FOOTER COMPONENT
+════════════════════════════════════════════ */
+.footer-bg {
+  background: var(--color-ocean-blue);
+}
+
+.dark .footer-bg {
+  background: #0a0b1a;
+}
+
+.footer-pad {
+  padding: 4rem 1rem 2rem;
+  border-top: 3px solid #f0dc96;
+}
+
+/* ─── BRAND ─── */
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(135deg, #f0dc96, #d4bc60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-text {
+  color: #2E3191;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-brand-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.footer-brand-tag {
+  color: #f0dc96;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* ─── CONTACT INFO ─── */
+.footer-address {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.footer-contact-item {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.82rem;
+}
+
+/* ─── SOCIAL LINKS ─── */
+.footer-socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-social-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.footer-social-btn:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+/* ─── COLUMN HEADINGS & LINKS ─── */
+.footer-heading {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.83rem;
+  transition: color 0.2s;
+  display: block;
+  margin-bottom: 0.45rem;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--color-secondary);
+}
+
+/* ─── BOTTOM BAR ─── */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal-link:hover {
+  color: var(--color-secondary);
+}
+
+/* ─── BACK TO TOP ─── */
+#backToTop {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: #2E3191;
+  border: 2px solid #f0dc96;
+  color: #f0dc96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(46, 49, 145, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*# sourceMappingURL=globals.css.map */
