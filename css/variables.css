@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════
+   CSS CUSTOM PROPERTIES / DESIGN TOKENS
+   (mirrors the @layer base :root block in the HTML's Tailwind style tag)
+════════════════════════════════════════════ */
+
+:root {
+    /* Brand colours */
+    --color-primary:        #2E3191;
+    --color-primary-light:  #3d42b8;
+    --color-primary-dark:   #232678;
+
+    --color-secondary:      #f0dc96;
+    --color-secondary-dark: #d4bc60;
+    --color-secondary-light:#f7ecbf;
+
+    --color-ocean-blue:     #103562;
+
+    /* Aliases */
+    --primary-l:  #3d42b8;
+    --sec-dark:   #d4bc60;
+    --primary-g:  #f0dc96;
+
+    /* Surfaces */
+    --bg:       #F9F7F2;
+    --bg-card:  #ffffff;
+
+    /* Typography */
+    --text:       #262626;
+    --text-muted: #5a5a7a;
+
+    /* Borders */
+    --border: rgba(46, 49, 145, 0.12);
+
+    /* Navbar */
+    --nav-bg:   #2E3191;
+    --nav-text: rgba(255, 255, 255, 0.88);
+    --nav-hover:#f0dc96;
+
+    /* Tailwind ring resets */
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow:        0 0 #0000;
+    --tw-shadow:             0 0 #0000;
+
+    /* Type scale */
+    --text-small: clamp(0.875rem, 1vw, 1rem);
+}
+
+/* Dark mode overrides */
+.dark {
+    --bg:       #0d0f1e;
+    --bg-card:  #151828;
+    --text:     #e8e9f5;
+    --text-muted:#8888aa;
+    --border:   rgba(240, 220, 150, 0.12);
+    --nav-bg:   #1a1c3a;
+    --nav-text: rgba(255, 255, 255, 0.85);
+    --nav-hover:#f0dc96;
+}
+
+/* Base resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-kantumruy), var(--font-roboto), sans-serif;
+    font-size: var(--text-body, 1rem);
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}

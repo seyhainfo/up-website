@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════
+   PARTNERS MARQUEE COMPONENT
+════════════════════════════════════════════ */
+
+.partners-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--color-primary);
+}
+
+/* ─── MARQUEE TRACK ─── */
+.marquee-track {
+    display: flex;
+    animation: marquee 32s linear infinite;
+    gap: 3rem;
+    align-items: center;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0) }
+    to   { transform: translateX(-50%) }
+}
+
+/* ─── PARTNER LOGOS ─── */
+.partner-logo {
+    flex-shrink: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    filter: grayscale(100%) opacity(0.5);
+    transition: filter 0.3s;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%) opacity(1);
+}
+
+.partner-logo img {
+    height: 100%;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+}
+
+/* ─── FADE EDGES ─── */
+.marquee-fade-left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    background: linear-gradient(to right, var(--bg-card), transparent);
+    pointer-events: none;
+}
+
+.marquee-fade-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    background: linear-gradient(to left, var(--bg-card), transparent);
+    pointer-events: none;
+}
