@@ -4,8 +4,8 @@
   "description": "Read me",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch ./sass/style.scss:./css/style.css",
-    "dev": "npx @tailwindcss/cli -i ./sass/style.css -o ./css/style.css --watch",
+    "watch": "sass --watch ./sass/style.scss:./sass/compiled.css && npx @tailwindcss/cli -i ./sass/input.css -o ./css/style.css --watch",
+    "dev": "npx @tailwindcss/cli -i ./sass/input.css -o ./css/style.css --watch",
     "build": "npx @tailwindcss/cli -i ./sass/style.css -o ./css/style.css --minify"
   },
   "repository": {
@@ -23,5 +23,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.2.1",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "sass": "^1.98.0"
   }
 }
