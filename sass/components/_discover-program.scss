@@ -1,0 +1,162 @@
+/* ═══════════════════════════════════════════
+   DISCOVER PROGRAMS SECTION COMPONENT
+════════════════════════════════════════════ */
+
+.programs-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0.75rem auto 0;
+}
+
+/* ─── PROGRAM CARD ─── */
+.program-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(10, 12, 40, 0.92) 0%, rgba(10, 12, 40, 0.3) 60%, transparent 100%);
+        z-index: 1;
+    }
+
+    &:hover {
+        transform: scale(1.016);
+        box-shadow: 0 20px 48px rgba(46, 49, 145, 0.25);
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        padding: 1.5rem;
+    }
+}
+
+/* ─── PROGRAM BADGE ─── */
+.prog-badge {
+    background: rgba(240, 220, 150, 0.85);
+    color: #2E3191;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.prog-card-inner--absolute {
+    position: absolute;
+    inset: 0;
+}
+
+/* ─── PROGRAM CARD SIZE VARIANTS ─── */
+.prog-card {
+    &--lg { min-height: 280px; }
+    &--md { min-height: 220px; }
+}
+
+/* ─── PROGRAM BACKGROUNDS ─── */
+.prog-bg {
+    &--foundation { background: linear-gradient(135deg, #1a1c3a, #2E3191 60%, #183a26); }
+    &--pharmacy   { background: linear-gradient(160deg, #1a3a26, #2E3191); }
+    &--medicine   { background: linear-gradient(160deg, #1a1c3a, #2E3191); }
+    &--dentistry  { background: linear-gradient(160deg, #207D62, #1a1c3a); }
+    &--nursing    { background: linear-gradient(160deg, #2E3191, #207D62); }
+    &--tech       { background: linear-gradient(160deg, #1a1c3a, #d4bc60, #2E3191); }
+    &--biotech    { background: linear-gradient(160deg, #207D62, #2E3191); }
+}
+
+/* ─── PROGRAM CONTENT LAYOUT ─── */
+.prog-content-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* ─── PROGRAM TITLES ─── */
+.prog-title {
+    &--xl,
+    &--md,
+    &--sm {
+        font-family: var(--font-kantumruy), var(--font-roboto), serif;
+        color: #fff;
+    }
+
+    &--xl {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+    }
+
+    &--md {
+        font-size: 1.25rem;
+        margin-bottom: 0.3rem;
+    }
+
+    &--sm {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ─── PROGRAM DESCRIPTIONS ─── */
+.prog-desc {
+    &--lg,
+    &--md {
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.55;
+    }
+
+    &--lg {
+        font-size: 0.82rem;
+        margin-bottom: 1rem;
+    }
+
+    &--md {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* ─── PROGRAM LINKS ─── */
+.prog-link {
+    &--gold-lg,
+    &--gold-sm {
+        color: #f0dc96;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    &--gold-lg {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.82rem;
+        transition: gap 0.2s;
+    }
+
+    &--gold-sm {
+        font-size: 0.75rem;
+    }
+}
+
+/* ─── PROGRAM ICONS ─── */
+.prog-icon {
+    &--lg {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    &--sm {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+}

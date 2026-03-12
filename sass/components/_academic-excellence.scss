@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════
+   ACADEMIC EXCELLENCE SECTION COMPONENT
+════════════════════════════════════════════ */
+
+.excellence {
+    &-eyebrow {
+        color: #f0dc96;
+    }
+
+    &-heading {
+        font-family: var(--font-kantumruy), var(--font-roboto), serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        color: #fff;
+        line-height: 1.18;
+        margin-bottom: 1.25rem;
+    }
+
+    &-desc {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        max-width: 480px;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ─── STAT ITEMS ─── */
+.stat-item {
+    &--gold,
+    &--green,
+    &--blue {
+        padding-top: 1.25rem;
+        border-top: 2px solid;
+    }
+
+    &--gold  { border-color: #f0dc96; }
+    &--green { border-color: #3AAB88; }
+    &--blue  { border-color: #7ba4e8; }
+}
+
+.stat-num {
+    font-family: var(--font-kantumruy), var(--font-roboto), serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+    &--gold  { color: #f0dc96; }
+    &--green { color: #7DE8C8; }
+    &--blue  { color: #a8cffa; }
+
+    &__unit {
+        &--gold,
+        &--green,
+        &--blue {
+            font-size: 1.5rem;
+        }
+
+        &--green { color: #3AAB88; }
+        &--blue  { color: #7ba4e8; }
+    }
+}
+
+.stat-subdesc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+/* ─── SECONDARY STATS GRID ─── */
+.stat-secondary {
+    &-grid {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        gap: 1rem;
+    }
+
+    &-item--bordered {
+        border-inline: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    &-val {
+        font-family: var(--font-kantumruy), var(--font-roboto), serif;
+        font-size: 1.8rem;
+        color: #f0dc96;
+
+        &__sup {
+            font-size: 1rem;
+        }
+    }
+
+    &-label {
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 0.72rem;
+        margin-top: 0.25rem;
+    }
+}

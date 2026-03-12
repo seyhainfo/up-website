@@ -1,0 +1,792 @@
+/* ═══════════════════════════════════════════
+   HERO SECTION COMPONENT
+════════════════════════════════════════════ */
+
+/* ─── HERO BASE ─── */
+.hero {
+    &-section {
+        background: linear-gradient(135deg, #1a1c3a 0%, #2E3191 45%, #1a3a2a 100%);
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &-mesh {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+            radial-gradient(ellipse 70% 60% at 75% 40%, rgba(32, 125, 98, 0.2) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(240, 220, 150, 0.1) 0%, transparent 55%),
+            radial-gradient(ellipse 40% 40% at 85% 85%, rgba(46, 49, 145, 0.4) 0%, transparent 50%);
+
+        &--1 {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 75% 40%, rgba(32, 125, 98, 0.22) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(240, 220, 150, 0.1) 0%, transparent 55%);
+        }
+
+        &--2 {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 70% at 30% 50%, rgba(240, 220, 150, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 30%, rgba(32, 125, 98, 0.2) 0%, transparent 55%);
+        }
+
+        &--3 {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 65% 55% at 60% 40%, rgba(46, 49, 145, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 15% 70%, rgba(32, 125, 98, 0.25) 0%, transparent 55%);
+        }
+    }
+
+    &-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.04;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
+        background-size: 64px 64px;
+    }
+
+    /* ─── HERO SWIPER ─── */
+    &-swiper {
+        width: 100%;
+        height: 100vh;
+        min-height: 600px;
+
+        .swiper-slide {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            &-active .hero-slide-bg { transform: scale(1); }
+
+            &-active .hero-slide-badge {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.15s;
+            }
+
+            &-active .hero-slide-title {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.3s;
+            }
+
+            &-active .hero-slide-desc {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.45s;
+            }
+
+            &-active .hero-slide-btns {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.6s;
+            }
+
+            &-active .hero-slide-stats {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.75s;
+            }
+        }
+
+        /* ─── SWIPER PAGINATION ─── */
+        .swiper-pagination {
+            bottom: 2.5rem !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.35);
+            opacity: 1;
+            border-radius: 4px;
+            transition: all 0.4s ease;
+
+            &-active {
+                background: #f0dc96;
+                width: 28px;
+            }
+        }
+
+        /* ─── SWIPER NAV BUTTONS ─── */
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background 0.2s, border-color 0.2s;
+
+            &:hover {
+                background: rgba(240, 220, 150, 0.25);
+                border-color: #f0dc96;
+            }
+
+            &::after {
+                font-size: 14px;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+    }
+
+    /* ─── HERO SLIDE BACKGROUNDS ─── */
+    &-slide {
+        &-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.06);
+            transition: transform 6s ease;
+
+            &--1 { background-image: linear-gradient(135deg, #1a1c3a 0%, #2E3191 50%, #183a26 100%); }
+            &--2 { background-image: linear-gradient(120deg, #0d1f4e 0%, #2E3191 40%, #1a3a26 100%); }
+            &--3 { background-image: linear-gradient(130deg, #0e1f1a 0%, #183a26 40%, #2E3191 100%); }
+        }
+
+        &-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, rgba(10, 12, 40, 0.88) 0%, rgba(46, 49, 145, 0.55) 55%, rgba(0, 0, 0, 0.2) 100%);
+
+            &--2 {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(105deg, rgba(10, 12, 40, 0.92) 0%, rgba(46, 49, 145, 0.6) 55%, rgba(0, 0, 0, 0.15) 100%);
+            }
+
+            &--3 {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(105deg, rgba(10, 20, 15, 0.9) 0%, rgba(24, 58, 38, 0.6) 55%, rgba(0, 0, 0, 0.1) 100%);
+            }
+        }
+
+        /* ─── SLIDE TEXT ENTRANCE ANIMATIONS ─── */
+        &-badge,
+        &-title,
+        &-desc,
+        &-btns,
+        &-stats {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        &-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 90rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        &-title .title-khmer {
+            display: block;
+            font-family: var(--font-kantumruy);
+            color: #ffffff;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /* ─── SLIDE COUNTER & PROGRESS ─── */
+    &-slide-counter {
+        position: absolute;
+        bottom: 2.4rem;
+        right: 3rem;
+        z-index: 10;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.45);
+        letter-spacing: 0.08em;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+
+        span {
+            color: #f0dc96;
+            font-weight: 700;
+        }
+    }
+
+    &-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        background: #f0dc96;
+        z-index: 10;
+        width: 0%;
+        transition: width 0.05s linear;
+    }
+
+    /* ─── HERO DECORATIVE ELEMENTS ─── */
+    &-deco {
+        &-circle {
+            &--lg,
+            &--sm {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                border: 1px solid;
+            }
+
+            &--lg {
+                right: -10%;
+                width: 55vw;
+                max-width: 700px;
+                height: 55vw;
+                max-height: 700px;
+                border-color: rgba(240, 220, 150, 0.08);
+            }
+
+            &--sm {
+                right: -5%;
+                width: 42vw;
+                max-width: 560px;
+                height: 42vw;
+                max-height: 560px;
+                border-color: rgba(240, 220, 150, 0.06);
+            }
+        }
+
+        &-dots {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            height: 80%;
+            opacity: 0.04;
+
+            &__inner {
+                background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1.5px, transparent 1.5px);
+                background-size: 28px 28px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    /* ─── HERO BADGE PILLS ─── */
+    &-badge {
+        &-wrap {
+            margin-bottom: 1.25rem;
+        }
+
+        &-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240, 220, 150, 0.12);
+            border: 1px solid rgba(240, 220, 150, 0.35);
+            color: #f0dc96;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+
+            &--green {
+                background: rgba(58, 171, 136, 0.15);
+                border-color: rgba(58, 171, 136, 0.35);
+                color: #7DE8C8;
+            }
+        }
+
+        &-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #3AAB88;
+            flex-shrink: 0;
+        }
+    }
+
+    /* ─── HERO HEADINGS ─── */
+    &-h1 {
+        font-family: var(--font-kantumruy), var(--font-roboto), serif;
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        line-height: 1.06;
+        color: #fff;
+        margin-bottom: 1.25rem;
+
+        &--md {
+            font-size: clamp(2.5rem, 5.5vw, 5rem);
+            line-height: 1.08;
+        }
+    }
+
+    &-em {
+        font-style: italic;
+        color: #f0dc96;
+    }
+
+    &-desc {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 500px;
+        margin-bottom: 2rem;
+    }
+
+    &-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 3rem;
+    }
+
+    /* ─── HERO STATS ─── */
+    &-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    &-stat {
+        &__number {
+            font-family: var(--font-kantumruy), var(--font-roboto), serif;
+            font-size: 1.75rem;
+            color: #f0dc96;
+        }
+
+        &__label {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.72rem;
+            margin-top: 0.1rem;
+        }
+
+        &__divider {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            align-self: stretch;
+        }
+
+        &__sup {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* ─── HERO FLOAT CARD ─── */
+    &-float-card {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 0.75rem;
+        padding: 1.2rem 1.4rem;
+        width: 300px;
+
+        &__hd {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        &__icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(58, 171, 136, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        &__title {
+            color: #fff;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        &__sub {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+        }
+
+        &__rank {
+            font-family: var(--font-kantumruy), var(--font-roboto), serif;
+            color: #f0dc96;
+            font-size: 2.2rem;
+
+            &-sub {
+                font-size: 1rem;
+                color: rgba(240, 220, 150, 0.45);
+                font-weight: 400;
+                margin-left: 0.3rem;
+            }
+        }
+
+        &__badge {
+            color: #3AAB88;
+            font-size: 0.75rem;
+            margin-top: 0.35rem;
+            font-weight: 500;
+        }
+    }
+
+    /* ─── HERO QUALITY STAT CARD ─── */
+    &-quality {
+        &-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.1rem 1.3rem;
+            width: 260px;
+        }
+
+        &-label {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.63rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        &-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        &-row-hd {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        &-row-name {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+        }
+
+        &-val {
+            &--gold,
+            &--green,
+            &--blue {
+                font-size: 0.75rem;
+                font-weight: 700;
+            }
+
+            &--gold  { color: #f0dc96; }
+            &--green { color: #3AAB88; }
+            &--blue  { color: #7ba4e8; }
+        }
+    }
+
+    /* ─── HERO SCROLL INDICATOR ─── */
+    &-scroll {
+        position: absolute;
+        bottom: 2.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        z-index: 10;
+
+        &__label {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+    }
+
+    /* ─── HERO SLIDE 2: FEATURE STATS ─── */
+    &-feature {
+        &-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        &-icon {
+            &--gold,
+            &--green {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+            }
+
+            &--gold {
+                background: rgba(240, 220, 150, 0.15);
+                border: 1px solid rgba(240, 220, 150, 0.25);
+            }
+
+            &--green {
+                background: rgba(58, 171, 136, 0.15);
+                border: 1px solid rgba(58, 171, 136, 0.25);
+            }
+        }
+
+        &-title {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        &-sub {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.72rem;
+        }
+    }
+
+    /* ─── HERO ADMISSION CARD (SLIDE 2) ─── */
+    &-admission {
+        &-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 360px;
+        }
+
+        &-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #f0dc96;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        &-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
+    &-step {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+
+        &-num {
+            &--active,
+            &--mid,
+            &--dim {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                font-size: 0.75rem;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            &--active {
+                background: #f0dc96;
+                color: #2E3191;
+            }
+
+            &--mid {
+                background: rgba(240, 220, 150, 0.2);
+                border: 1px solid #f0dc96;
+                color: #f0dc96;
+            }
+
+            &--dim {
+                background: rgba(240, 220, 150, 0.2);
+                border: 1px solid rgba(240, 220, 150, 0.4);
+                color: rgba(240, 220, 150, 0.6);
+            }
+        }
+
+        &-connector {
+            margin-left: 1rem;
+            width: 1px;
+            height: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &-title {
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        &-desc {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.75rem;
+            margin-top: 0.15rem;
+        }
+    }
+
+    /* ─── HERO RESEARCH STATS (SLIDE 3) ─── */
+    &-research {
+        &-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        &-stat {
+            &--green,
+            &--gold,
+            &--light {
+                padding: 0.75rem 1.25rem;
+                border-radius: 0.5rem;
+            }
+
+            &--green {
+                background: rgba(58, 171, 136, 0.12);
+                border: 1px solid rgba(58, 171, 136, 0.25);
+            }
+
+            &--gold {
+                background: rgba(240, 220, 150, 0.08);
+                border: 1px solid rgba(240, 220, 150, 0.2);
+            }
+
+            &--light {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        &-val {
+            &--green,
+            &--gold,
+            &--white {
+                font-family: var(--font-kantumruy), var(--font-roboto), serif;
+                font-size: 1.6rem;
+            }
+
+            &--green { color: #7DE8C8; }
+            &--gold  { color: #f0dc96; }
+            &--white { color: #fff; }
+        }
+
+        &-label {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+        }
+    }
+
+    /* ─── HERO FACULTY GRID (SLIDE 3) ─── */
+    &-faculty {
+        &-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            width: 360px;
+        }
+
+        &-card {
+            backdrop-filter: blur(12px);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            text-align: center;
+
+            &--neutral {
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            &--green {
+                background: rgba(58, 171, 136, 0.1);
+                border: 1px solid rgba(58, 171, 136, 0.2);
+            }
+
+            &--gold {
+                background: rgba(240, 220, 150, 0.08);
+                border: 1px solid rgba(240, 220, 150, 0.15);
+            }
+
+            &--subtle {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            &__icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            &__name {
+                color: #fff;
+                font-size: 0.78rem;
+                font-weight: 600;
+            }
+
+            &__dept {
+                color: rgba(255, 255, 255, 0.35);
+                font-size: 0.68rem;
+                margin-top: 0.2rem;
+            }
+        }
+    }
+}
+
+/* ─── SCROLL MOUSE INDICATOR ─── */
+.scroll-mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.scroll-dot {
+    width: 4px;
+    height: 8px;
+    background: var(--color-secondary);
+    border-radius: 2px;
+    animation: scrollDot 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+    0%   { transform: translateY(0);    opacity: 1; }
+    100% { transform: translateY(14px); opacity: 0; }
+}
+
+/* ─── STAT BAR FILLS ─── */
+.stat-bar-fill {
+    &--gold  { background: #f0dc96; }
+    &--green { background: #3AAB88; }
+    &--blue  { background: #7ba4e8; }
+}

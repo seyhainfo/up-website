@@ -3,22 +3,22 @@
  Import order matters — variables first,
  then utilities, then components.
 ════════════════════════════════════════════ */
-@import "./base/reset.css";
+@use "./base/reset.css";
 
 /* 1. Plain CSS design tokens (overrides / standalone fallback) */
-@import "./variables.css";
+@use "./variables.css";
 
 /* 2. Reusable utilities */
-@import "./utilities.css";
+@use "./utilities.css";
 
 /* 3. Section components */
-@import "./components/navbar.css";
-@import "./components/hero.css";
-@import "./components/news-event.css";
-@import "./components/academic-excellence.css";
-@import "./components/discover-program.css";
-@import "./components/scho-cam.css";
-@import "./components/partners.css";
-@import "./components/testimonial.css";
-@import "./components/cta.css";
-@import "./components/footer";
+@use "./components/navbar";
+@use "./components/hero";
+@use "./components/news-event";
+@use "./components/academic-excellence";
+@use "./components/discover-program";
+@use "./components/scho-cam";
+@use "./components/partners";
+@use "./components/testimonial";
+@use "./components/cta";
+@use "./components/footer";

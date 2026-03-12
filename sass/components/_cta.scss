@@ -1,0 +1,36 @@
+/* ═══════════════════════════════════════════
+   CALL TO ACTION SECTION COMPONENT
+════════════════════════════════════════════ */
+
+.cta {
+    &-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: rgba(240, 220, 150, 0.55);
+        margin-bottom: 1rem;
+    }
+
+    &-heading {
+        font-family: var(--font-kantumruy), var(--font-roboto), serif;
+        color: #fff;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+    }
+
+    &-desc {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.95rem;
+        max-width: 480px;
+        margin: 0 auto 2rem;
+    }
+
+    &-btns {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
